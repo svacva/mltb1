@@ -52,7 +52,7 @@ programming in Python.
 - Equal split size settings (global and user option)
 - Ability to leech split file parts in a media group (global and user option)
 - Download restricted messages (document or link) by tg private/public/super links (task option)
-- Choose transfer by bot or user session in case you have a premium plan (global, user option and task option)
+- Choose transfer by bot or user session incase you have a premium plan (global, user option and task option)
 - Mix upload between user and bot session with respect to file size (global, user option and task option)
 - Upload with custom layout multiple thubnmail (global, user option and task option)
 - Topics support
@@ -83,7 +83,7 @@ programming in Python.
 - Transfer (download/upload/clone-server-side) without or with random service accounts (global and user option)
 - Ability to choose config, remote and path from list with or without buttons (global, user and task option)
 - Ability to set flags for each task or globally from config (global, user and task option)
-- Abitity to select specific files or folders to download/copy using buttons (task option)
+- Ability to select specific files or folders to download/copy using buttons (task option)
 - Rclone.conf (global and user option)
 - Rclone serve for combine remote to use it as index from all remotes (global option)
 - Upload destination (global, user and task option)
@@ -181,9 +181,9 @@ programming in Python.
 - Custom name for all links except torrents. For files you should add extension except yt-dlp links (global and user
   option)
 - Exclude files with specific extensions from being uploaded/cloned (global and user option)
-- View Link button. Extra button to open index link in broswer instead of direct download for file
+- View Link button. Extra button to open index link in browser instead of direct download for file
 - Queueing System for all tasks (global option)
-- Ability to zip/unzip multi links in same directory. Mostly helpful in unziping tg file parts (task option)
+- Ability to zip/unzip multi links in same directory. Mostly helpful in unzipping tg file parts (task option)
 - Bulk download from telegram txt file or text message contains links separated by new line (task option)
 - Join splitted files that have splitted before by split(linux pkg) (task option)
 - Sample video Generator (task option)
@@ -312,7 +312,7 @@ options [HERE](https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/YoutubeDL.py#
 see [Using Service Accounts](https://github.com/anasty17/mirror-leech-telegram-bot#generate-service-accounts-what-is-service-account) section below. Default is `False`.
 
 - `FFMPEG_CMDS` (`Dict`): Dict of list values of ffmpeg commands. You can set multiple ffmpeg commands for all files before upload. Don't write ffmpeg at beginning, start directly with the arguments. `Dict`
-  - Examples: {"subtitle": ["-i mltb.mkv -c copy -c:s srt mltb.mkv", "-i mltb.video -c copy -c:s srt mltb"], "convert": ["-i mltb.m4a -c:a libmp3lame -q:a 2 mltb.mp3", "-i mltb.audio -c:a libmp3lame -q:a 2 mltb.mp3"], extract: ["-i mltb -map 0:a -c copy mltb.mka -map 0:s -c copy mltb.srt"], "metadata": ["-i mltb.mkv -map 0 -map -0:v:1 -map -0:s -map 0:s:0 -map -0:v:m:attachment -c copy -metadata:s:v:0 title={title} -metadata:s:a:0 title={title} -metadata:s:a:1 title={title2} -metadata:s:a:2 title={title2} -c:s srt -metadata:s:s:0 title={title3} mltb -y -del"]}
+  - Examples: {"subtitle": ["-i mltb.mkv -c copy -c:s srt mltb.mkv", "-i mltb.video -c copy -c:s srt mltb"], "convert": ["-i mltb.m4a -c:a libmp3lame -q:a 2 mltb.mp3", "-i mltb.audio -c:a libmp3lame -q:a 2 mltb.mp3"], extract: ["-i mltb -map 0:a -c copy mltb.mka -map 0:s -c copy mltb.srt"], "metadata": ["-i mltb.mkv -map 0 -map -0:v:1 -map -0:s -map 0:s:0 -map -0:v:m:attachment -c copy -metadata:s:v:0 title={title} -metadata:s:a:0 title={title} -metadata:s:a:1 title={title2} -metadata:s:a:2 title={title2} -c:s srt -metadata:s:s:0 title={title3} mltb -y -del"], "watermark": ["-i mltb -i tg://openmessage?user_id=5272663208&message_id=322801 -filter_complex 'overlay=W-w-10:H-h-10' -c:a copy mltb"]}
   **Notes**:
   - Don't add ffmpeg at the beginning!
   - Add `-del` to the list which you want from the bot to delete the original files after command run complete!
@@ -324,6 +324,7 @@ see [Using Service Accounts](https://github.com/anasty17/mirror-leech-telegram-b
   3. Third cmd: the input in mltb.m4a so this cmd will work only on m4a audios and the output is mltb.mp3 so the output extension is mp3.
   4. Fourth cmd: the input is mltb.audio so this cmd will work on all audios and the output is mltb.mp3 so the output extension is mp3.
   5. FFmpeg Variables in last cmd which is metadata ({title}, {title2}, etc...), you can edit them in usetting
+  6. Telegram link for small size inputs like photo to set watermark.
 
 - `NAME_SUBSTITUTE` (`Str`): Add word/letter/character/sentense/pattern to remove or replace with other words with sensitive case or without. 
   **Notes**:
@@ -698,15 +699,15 @@ python3 generate_drive_token.py
 - `UPSTREAM_REPO` variable can be used for edit/add any file in repository.
 - You can add private/public repository link to grab/overwrite all files from it.
 - You can skip adding the privates files like token.pickle or accounts folder before deploying, simply
-  fill `UPSTREAM_REPO` private one in case you want to grab all files including private files.
+  fill `UPSTREAM_REPO` private one incase you want to grab all files including private files.
 - If you added private files while deploying and you have added private `UPSTREAM_REPO` and your private files in this
   private repository, so your private files will be overwritten from this repository. Also if you are using database for
   private files, then all files from database will override the private files that added before deploying or from
   private `UPSTREAM_REPO`.
-- If you filled `UPSTREAM_REPO` with the official repository link, then be carefull incase any change in
+- If you filled `UPSTREAM_REPO` with the official repository link, then be careful incase any change in
   requirements.txt your bot will not start after restart. In this case you need to deploy again with updated code to
   install the new requirements or simply by changing the `UPSTREAM_REPO` to you fork link with that old updates.
-- In case you you filled `UPSTREAM_REPO` with your fork link be carefull also if you fetched the commits from the
+- In case you you filled `UPSTREAM_REPO` with your fork link be careful also if you fetched the commits from the
   official repository.
 - The changes in your `UPSTREAM_REPO` will take affect only after restart.
 
@@ -839,7 +840,7 @@ $emails = Get-ChildItem .\**.json |Get-Content -Raw |ConvertFrom-Json |Select -E
 grep -oPh '"client_email": "\K[^"]+' *.json > emails.txt
 ```
 
-- Unmount acounts folder
+- Unmount accounts folder
 
 ```
 cd ..
