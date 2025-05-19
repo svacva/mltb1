@@ -26,7 +26,7 @@ UPLOAD_PATHS = {}
 GDRIVE_ID = "17WK3jyP5JtSEGPSbtAgdTcyC4b8D2h3p"
 IS_TEAM_DRIVE = True
 STOP_DUPLICATE = True
-INDEX_URL = ""
+INDEX_URL = "https://mltbhdt.teamhdt1.workers.dev/1:/Mirror%20Bot/"
 # Rclone
 RCLONE_PATH = ""
 RCLONE_FLAGS = ""
