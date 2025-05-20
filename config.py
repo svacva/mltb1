@@ -9,7 +9,7 @@ USER_SESSION_STRING = ""
 CMD_SUFFIX = ""
 AUTHORIZED_CHATS = ""
 SUDO_USERS = ""
-DATABASE_URL = "mongodb+srv://teamhdt:XQXgLr9sWq713Iv0@cluster1.6p8wkax.mongodb.net/?retryWrites=true&w=majority"
+DATABASE_URL = "mongodb+srv://sivabdrip1:eLx5c71W4pDldlOb@cluster0.yulcjg2.mongodb.net/?retryWrites=true&w=majority"
 STATUS_LIMIT = 4
 DEFAULT_UPLOAD = "gd"
 STATUS_UPDATE_INTERVAL = 30
